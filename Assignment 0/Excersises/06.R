@@ -25,4 +25,4 @@ points(x,extra(x),col = "blue",type="l",lty=2)
 #d
 proportions = c(0.37, 0.17, 0.28, 0.07, 0.06, 0.05)
 flavours = c("Pear","Cheesecake", "Chocolate", "Almond", "Raspberry","Other")
-pie(proportions, labels = flavours, main="Pie Chart of Pie flavours bought in cheapass stores")
+pie(proportions, labels = flavours, main="Pie Chart of Pie flavours")
