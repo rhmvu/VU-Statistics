@@ -17,10 +17,9 @@ plot(x,y(x), xlab=
 points(x,extra(x),col = "blue",type="l",lty=2)
 #c
 
-#is.numeric(school): Checks if the object school has nummeric elements
-#table(school): Creates a table from the elements in the school object
-#barplot(table(school):Creates a bar plot with vertical or horizontal bars from the table created from the school object.
-#col=c("blue","green", "black","yellow")): Creates a vector c from the elements "blue","green", "black","yellow"
+is.numeric(school)#: #Checks if the object school has nummeric elements
+table(school)#: Creates a table from the elements in the school object
+barplot(table(school), col=c("blue","green", "black","yellow"))
 
 #d
 proportions = c(0.37, 0.17, 0.28, 0.07, 0.06, 0.05)
