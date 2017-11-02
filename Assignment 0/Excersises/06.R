@@ -12,8 +12,8 @@ extra = function(x){
 }
 x=seq(0,2,length = 30)
 plot(x,y(x), xlab=
-    "x",ylab="x^4 (red) and x^4 (blue)", main="Plot of X against x^4(Red) and 5x+2(Blue)",type="l",
-    col="red", lty=2)
+       "x",ylab="x^4 (red) and 5x+2 (blue)", main="Plot of X against x^4(Red) and 5x+2(Blue)",type="l",
+     col="red", lty=2)
 points(x,extra(x),col = "blue",type="l",lty=2)
 #c
 
