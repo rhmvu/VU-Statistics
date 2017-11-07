@@ -32,16 +32,37 @@ barplot(medians[[2]],names.arg = groupedPerCyl2[,"Cylls"],ylim = c(0,35),col=c("
 barplot(sds[[1]],names.arg = groupedPerCyl1[,"Cylls"],ylim = c(0,5),col=c("red"),width = 1,xlim = c(0,8),ylab = "Miles per Gallon", xlab = "Amount of cyllinders", main = "Type1: standard deviation MPG per cyllinders")
 barplot(sds[[2]],names.arg = groupedPerCyl2[,"Cylls"],ylim = c(0,5),col=c("darkblue"),width = 1,xlim = c(0,8),ylab = "Miles per Gallon", xlab = "Amount of cyllinders", main = "Type2: standard deviation MPG per cyllinders")
 
-#extra stacked:
-#cylls = c(groupedPerCyl2[,"Cylls"])+c(groupedPerCyl1[,"Cylls"])
-#groupedPerCyl1[,"Cylls"]
-#data1 = cbind(means[[1]],groupedPerCyl1[,"Cylls"])
-#data2 = cbind(means[[2]],groupedPerCyl2[,"Cylls"])
-#means[[3]] = cbind(data1,data2)
+#Side By Side in 3 graphs:
+par(mfrow=c(3,1))
 
-#barplot(means[[2]],names.arg = groupedPerCyl2[,"Cylls"],ylim = c(0,35),col=c("red","darkblue"),width = 1,xlim = c(0,8),ylab = "Miles per Gallon", xlab = "Amount of cyllinders", main = "Average(mean) MPG per cyllinders")
-#barplot(medians[[2]],names.arg = groupedPerCyl2[,"Cylls"],ylim = c(0,35),col=c("red","darkblue"),width = 1,xlim = c(0,8),ylab = "Miles per Gallon", xlab = "Amount of cyllinders", main = "Median MPG per cyllinders")
-#barplot(sds[[2]],names.arg = groupedPerCyl2[,"Cylls"],ylim = c(0,5),col=c("red","darkblue"),width = 1,xlim = c(0,8),ylab = "Miles per Gallon", xlab = "Amount of cyllinders", main = "standard deviation MPG per cyllinders")
+means = list(means[[1]],means[[2]],c(), c())
+means[[4]][3:4]  = means[[2]][2:3]
+means[[4]][1:2] = c(means[[2]][1],0)
+means[[3]] = rbind(means[[1]],means[[4]])
+rownames(means[[3]]) = c("Type 1","Type 2")
+means[[3]]
+barplot(means[[3]],names.arg = groupedPerCyl1[,"Cylls"],ylim = c(0,35),col=c("red","darkblue"),width = (0.5),xlim = c(0,8),ylab = "Miles per Gallon", xlab = "Amount of cyllinders", main = "Average(mean) MPG per cyllinders",beside = T,legend = rownames(means[[3]]))
+
+medians = list(medians[[1]],medians[[2]],c(), c())
+medians[[4]][3:4]  = medians[[2]][2:3]
+medians[[4]][1:2] = c(medians[[2]][1],0)
+medians[[3]] = rbind(medians[[1]],medians[[4]])
+rownames(medians[[3]]) = c("Type 1","Type 2")
+medians[[3]]
+barplot(medians[[3]],names.arg = groupedPerCyl1[,"Cylls"],ylim = c(0,35),col=c("red","darkblue"),width = (0.5),xlim = c(0,8),ylab = "Miles per Gallon", xlab = "Amount of cyllinders", main = "Median MPG per cyllinders",beside = T,legend = rownames(medians[[3]]))
+
+sds = list(sds[[1]],sds[[2]],c(), c())
+sds[[4]][3:4]  = sds[[2]][2:3]
+sds[[4]][1:2] = c(sds[[2]][1],0)
+sds[[3]] = rbind(sds[[1]],sds[[4]])
+rownames(sds[[3]]) = c("Type 1","Type 2")
+sds[[3]]
+barplot(sds[[3]],names.arg = groupedPerCyl1[,"Cylls"],ylim = c(0,5),col=c("red","darkblue"),width = (0.5),xlim = c(0,8),ylab = "Miles per Gallon", xlab = "Amount of cyllinders", main = "standard deviation MPG per cyllinders",beside = T,legend = rownames(sds[[3]]))
+
+
+
+
+
 #Nummeric data:
 print("Type 1")
 for(i in 1:length(groupedPerCyl1[[1]])){
