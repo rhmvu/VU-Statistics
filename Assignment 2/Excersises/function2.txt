@@ -1,0 +1,11 @@
+maxdice = function(n = 10, m = 2)
+{ # This function simulates rolling 
+  # m dice n times, 
+  # calculates the maximal value on m dice for every roll, 
+  # and returns a vector with n maximal values.
+  maxima = numeric(n)
+  for(i in 1:n){
+    maxima[i] = max(sample(6,m,replace=T))
+  }
+  maxima
+}
