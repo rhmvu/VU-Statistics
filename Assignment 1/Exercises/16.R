@@ -70,9 +70,11 @@ print("Type 1")
 for(i in 1:length(groupedPerCyl1[[1]])){
   print(paste("-Cyllinder ",groupedPerCyl1$Cylls[[i]]))
   print(summary(groupedPerCyl1$MPGs[[i]]))
+  print(paste("standard deviation:",sd(groupedPerCyl1$MPGs[[i]])))
 }
 print("All Cyllinders:")
 print(summary(mileage$mpg1))
+print(paste("standard deviation:",sd(mileage$mpg1)))
 
 print("Type 2")
 for(i in 1:length(groupedPerCyl2[[1]])){
@@ -81,19 +83,12 @@ for(i in 1:length(groupedPerCyl2[[1]])){
 }
 print("All Cyllinders:")
 print(summary(mileage$mpg2))
+print(paste("standard deviation:",sd(mileage$mpg2)))
 
 
-
-length(groupedPerCyl1[[1]])
-i = c(1)
-summary(groupedPerCyl1$MPGs[[i]])
-i = c(2)
-summary(groupedPerCyl1$MPGs[[i]])
-i = c(2)
-summary(groupedPerCyl1$MPGs[[i]])
-
-
-groupedPerCyl1$MPGs[[1]]
-summary(groupedPerCyl1$MPGs[[1]])
-
+#median and means amount of cylinders for both types:
+mean(mileage$cyl1)
+median(mileage$cyl1)
+mean(mileage$cyl2)
+median(mileage$cyl2)
 
