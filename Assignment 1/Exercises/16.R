@@ -59,8 +59,10 @@ rownames(sds[[3]]) = c("Type 1","Type 2")
 sds[[3]]
 barplot(sds[[3]],names.arg = groupedPerCyl1[,"Cylls"],ylim = c(0,5),col=c("red","darkblue"),width = (0.5),xlim = c(0,8),ylab = "Miles per Gallon", xlab = "Amount of cyllinders", main = "standard deviation MPG per cyllinders",beside = T,legend = rownames(sds[[3]]))
 
-
-
+#boxplots:
+par(mfrow=c(1,2))
+boxplot(mileage$mpg1, main= "Type 1", ylim = c(10,37))
+boxplot(mileage$mpg2, main= "Type 2", ylim = c(10,37))
 
 
 #Nummeric data:
