@@ -21,4 +21,3 @@ for(i in sort(uniques)){
 expectation = c(randomVar*probability)
 table = cbind(randomVar,probability,expectation)
 sum(expectation)
-table
